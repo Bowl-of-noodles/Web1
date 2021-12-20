@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лаба 1</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="description">
+            <div id="author" class="me">
+                Рогачёва Дарья P3213, вариант 13208
+            </div>
+            <div class="clear"></div>
+        </div>
+    </header>
+    <div class="container bordered" id="main">
+        <div class="container">
+            <div class="left_part">
+                <div class="container">
+                    <label>Выберите X:</label><br>
+                    <button class ="choosex" name="x" type="button" onclick="setX(this)" value="-5">-5</button>
+                    <button class ="choosex" name="x" type="button" onclick="setX(this)" value="-4">-4</button>
+                    <button class ="choosex" name="x" type="button" onclick="setX(this)" value="-3">-3</button>
+                    <button class ="choosex" name="x" type="button" onclick="setX(this)" value="-2">-2</button>
+                    <button class ="choosex" name="x" type="button" onclick="setX(this)" value="-1">-1</button>
+                    <button class ="choosex" name="x" type="button" onclick="setX(this)" value="0">0</button>
+                    <button class ="choosex" name="x" type="button" onclick="setX(this)" value="1">1</button>
+                    <button class ="choosex" name="x" type="button" onclick="setX(this)" value="2">2</button>
+                    <button class ="choosex" name="x" type="button" onclick="setX(this)" value="3">3</button>
+
+                </div>
+
+                <div class="container">
+                    <label>Введите Y:</label><br>
+                    <input name="y" type="text" id="y_container" class="input_style" placeholder="от -5 до 5"><br>
+                    <span class="error" id="error_in_Y"></span>
+                </div>
+                <div class="container">
+                    <label>Выберите R:</label><br>
+                    <input class="chooser" type="checkbox" name="r" value="1" onclick="validateR()">
+                    <label>1</label>
+                    <input class="chooser" type="checkbox" name="r" value="2" onclick="validateR()">
+                    <label>2</label>
+                    <input class="chooser" type="checkbox" name="r" value="3" onclick="validateR()">
+                    <label>3</label>
+                    <input class="chooser" type="checkbox" name="r" value="4" onclick="validateR()">
+                    <label>4</label>
+                    <input class="chooser" type="checkbox" name="r" value="5" onclick="validateR()">
+                    <label>5</label>
+                    <span class="error" id=""></span>
+                </div>
+                <div class="container">
+                    <button type="button" class="input_style" data-reset>Очистить</button>
+                    <button type="button" class="input_style" onclick="submit()" formmethod="get" formaction="index.html">Отправить</button>
+                    <!--<input type="reset" value="Очистить">
+                    <input type="submit" value="Отправить">-->
+                </div>
+            </div>
+            <div class="right_part">
+                <img src="img/graphic.JPG" alt="график">
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="container">
+            <table id="result_table">
+                <tbody id="tbody">
+                    <tr id="first">
+                        <th class="coords-col">X</th>
+                        <th class="coords-col">Y</th>
+                        <th class="coords-col">R</th>
+                        <th class="time-col">Время запроса</th>
+                        <th class="time-col">Время исполнения</th>
+                        <th class="hitres-col">Попадание</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </form>
+    <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--<script src="https://d3js.org/d3.v7.min.js"></script>-->
+    <script src="js/main.js"></script>
+</body>
+</html>
