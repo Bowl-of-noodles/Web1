@@ -93,7 +93,5 @@ $timezone = $_GET['timezone'];
 
 $results = getResultArray($x, $y, $r, $timezone);
 
-if ($dataType == 'json')
-    echo toJSON($results);
-else if($dataType == 'html')
+if($dataType == 'html')
     echo generateTableWithRows($wholeTable, $results);
