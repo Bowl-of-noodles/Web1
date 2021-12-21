@@ -2,16 +2,6 @@ var x, y, r;
 const maxLength = 10;
 const dataType = 'html';
 
-if (dataType === 'json') {
-    window.onload = (event) => {
-        if (document.cookie !== '') {
-            document.cookie.split("|").forEach(function (strElem) {
-                let newRow = generateRowFromElem(JSON.parse(strElem));
-                $('#result-table tr:first').after(newRow);
-            });
-        }
-    };
-}
 
 function setX(element) {
     x = element.value;
@@ -85,17 +75,7 @@ function submit() {
             'wholeTable': false,
             'dataType': dataType
         }).done(function (data) {
-            if (dataType === 'json') {
-                let arr = JSON.parse(data);
-                arr.forEach(function (elem) {
-                    if (!elem.validate) return;
-                    let newRow = generateRowFromElem(elem);
-                    $('#result_table tr:first').after(newRow);
-                    if (document.cookie !== '') {
-                        document.cookie += '|' + JSON.stringify(elem)
-                    } else document.cookie = JSON.stringify(elem);
-                });
-            } else if (dataType === 'html') {
+            if (dataType === 'html') {
                 $('#result_table tr:first').after(data);
             }
         });
